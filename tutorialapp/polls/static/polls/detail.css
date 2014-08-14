@@ -40,5 +40,7 @@ form {
     text-align: center;
 }
 
-#backbutton {
+#choice-container {
+    text-align: justify;
+    display: inline-block;
 }

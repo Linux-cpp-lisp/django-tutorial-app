@@ -7,15 +7,16 @@
 {% if error_message %}
     <p class="errormessage">{{ error_message }}</p>
 {% endif %}
-<div id="form-container">
-    <form action="{% url 'polls:vote' poll.id %}" method="POST">
-        {% csrf_token %}
-        {% for choice in poll.choice_set.all %}
-            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-            <label class="inputLabel" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br/>
-        {% endfor %}
-        <input id="submit" type="submit" value="Vote" />
-    </form>
-</div>
+<form action="{% url 'polls:vote' poll.id %}" method="POST">
+    {% csrf_token %}
+    <div id="choice-container">
+    {% for choice in poll.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <label class="inputLabel" for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br/>
+    {% endfor %}
+    </div>
+    <br/>
+    <input id="submit" type="submit" value="Vote" />
+</form>
 
 <a id="backbutton" href="{% url 'polls:index' %}">Back to Index</a>
