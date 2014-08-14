@@ -1,9 +1,19 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/index.css' %}"/>
+
+<h1>The Poll App</h1>
+<p id="recent-polls-label">Recent polls:</p>
+
 {% if latest_polls %}
-    <ul>
+    <ul id="poll-list">
     {% for poll in latest_polls %}
-        <li><a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a></li>
+        <li>
+            <a href="{% url 'polls:detail' poll.id %}">{{ poll.question }}</a>
+            <p>{{ poll.total_votes }} vote{{ poll.total_votes|pluralize }}</p>
+        </li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>Sorry! No polls are available.</p>
+    <p id="no-polls-available">Sorry! No polls are available.</p>
 {% endif %}
+

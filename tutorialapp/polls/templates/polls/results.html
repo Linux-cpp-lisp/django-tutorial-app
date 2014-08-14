@@ -1,5 +1,8 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/detail.css' %}" />
+
 <h1>{{ poll.question }}</h1>
-<p>{{ poll.pub_date }}</p>
+<p class="pubdate">Published {{ poll.pub_date }}</p>
 
 <ul>
     {% for choice in poll.choice_set.all %}

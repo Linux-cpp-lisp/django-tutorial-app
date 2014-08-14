@@ -1,0 +1,28 @@
+html {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 60;
+    text-align: center;
+}
+
+#poll-list {
+    list-style: none;
+    padding: 5px;
+}
+
+#poll-list > li {
+    border: 1px solid grey;
+    margin: 4px 0px;
+    padding: 10px 4px;
+}
+
+a {
+    color: DarkOrange;
+}
+
+#poll-list > li > p {
+    font-size: small;
+    color: #666666;
+}
