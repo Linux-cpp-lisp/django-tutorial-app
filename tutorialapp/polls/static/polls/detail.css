@@ -7,6 +7,20 @@ h1 {
     text-align: center;
 }
 
+ul {
+    list-style: none;
+    padding: 4px;
+}
+
+form {
+    text-align: center;
+}
+
+a {
+    color: DarkOrange;
+    text-align: center;
+}
+
 .pubdate {
     text-align: center;
     font-size: small;
@@ -18,26 +32,12 @@ h1 {
     text-align: center;
 }
 
-a {
-    color: DarkOrange;
-    text-align: center;
-}
-
 #submit {
     border: 1px solid DarkOrange;
     border-radius: 5px;
     background: none;
     color: DarkOrange;
     font-size: large;
-}
-
-ul {
-    list-style: none;
-    padding: 4px;
-}
-
-form {
-    text-align: center;
 }
 
 #choice-container {
